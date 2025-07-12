@@ -24,9 +24,9 @@ io.on("connection", (socket) => {
         const { calleePersonalCode, callType } = data;
         console.log(calleePersonalCode);
 
-        const connectedPeer = connectedPeers.find((peerSocketId) => {
-            peerSocketId === calleePersonalCode;
-        });
+        const connectedPeer = connectedPeers.find((peerSocketId) =>
+            peerSocketId === calleePersonalCode
+        );
 
         console.log(connectedPeer);
 
