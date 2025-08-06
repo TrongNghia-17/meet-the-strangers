@@ -33,7 +33,7 @@ personalCodeVideoButton.addEventListener("click", () => {
     console.log("video button clicked");
 
     const calleePersonalCode = document.getElementById("personal_code_input").value;
-    const callType = constants.callType.VIDEO_PERSONAL_CODE_PERSONAL_CODE;
+    const callType = constants.callType.VIDEO_PERSONAL_CODE;
 
     webRTCHandler.sendPreOffer(callType, calleePersonalCode);
 });
