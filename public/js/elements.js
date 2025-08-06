@@ -44,3 +44,40 @@ export const getIncomingCallDialog = (callTypeInfo, acceptCallHandler, rejectCal
 
     return dialog;
 }
+
+export const getCallingDialog = (rejectCallHandler) => {
+    const dialog = document.createElement('div');
+    dialog.classList.add('dialog_wrapper');
+    const dialogContent = document.createElement('div');
+    dialogContent.classList.add("dialog_content");
+    dialog.appendChild(dialogContent);
+
+    const title = document.createElement('p');
+    title.classList.add('dialog_title');
+    title.innerHTML = `Calling`;
+
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('dialog_image_container');
+    const image = document.createElement('img');
+    const avatarImagePath = './utils/images/dialogAvatar.png';
+    image.src = avatarImagePath;
+    imageContainer.appendChild(image);
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('dialog_button_container');
+
+    const handUpCallButton = document.createElement('button');
+    handUpCallButton.classList.add('dialog_reject_call_button');
+    const handUpCallImg = document.createElement('img');
+    handUpCallImg.classList.add('dialog_button_image');
+    const rejectCallImgPath = './utils/images/rejectCall.png';
+    handUpCallImg.src = rejectCallImgPath;
+    handUpCallButton.append(handUpCallImg);
+    buttonContainer.appendChild(handUpCallButton);
+
+    dialogContent.appendChild(title);
+    dialogContent.appendChild(imageContainer);
+    dialogContent.appendChild(buttonContainer);
+
+    return dialog;
+};
