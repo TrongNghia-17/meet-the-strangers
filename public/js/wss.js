@@ -4,7 +4,7 @@ import * as webRTCHandler from "./webRTCHandler.js";
 
 let socketIO = null;
 
-export const registerSocketEnvents = (socket) => {
+export const registerSocketEvents = (socket) => {
     socketIO = socket;
 
     socket.on("connect", () => {
