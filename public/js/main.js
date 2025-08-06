@@ -5,7 +5,7 @@ import * as constansts from "./constants.js";
 
 // initialization of socketIO connection
 const socket = io("/");
-wss.registerSocketEnvents(socket);
+wss.registerSocketEvents(socket);
 
 // register event listener for personal code copy button
 const personalCodeCopyButton = document.getElementById("personal_code_copy_button");
@@ -23,7 +23,7 @@ personalCodeChatButton.addEventListener("click", () => {
     console.log("chat button clicked");
 
     const calleePersonalCode = document.getElementById("personal_code_input").value;
-    const callType = constansts.callType.CHAT_PERSONAL_CODE;
+    const callType = constants.callType.CHAT_PERSONAL_CODE;
 
     webRTCHandler.sendPreOffer(callType, calleePersonalCode);
 });
@@ -32,7 +32,7 @@ personalCodeVideoButton.addEventListener("click", () => {
     console.log("video button clicked");
 
     const calleePersonalCode = document.getElementById("personal_code_input").value;
-    const callType = constansts.callType.VIDEO_PERSONAL_CODE_PERSONAL_CODE;
+    const callType = constants.callType.VIDEO_PERSONAL_CODE_PERSONAL_CODE;
 
     webRTCHandler.sendPreOffer(callType, calleePersonalCode);
 });
